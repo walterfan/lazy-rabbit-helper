@@ -1,0 +1,20 @@
+translate_en:
+  desc: translate text
+  system_prompt: You are a professional translator.
+  user_prompt: |
+    I want to spend 2 weeks to learn type script as below
+    ---
+    Week 1: TypeScript Basics
+    Days 1-2: TypeScript set   up and basic types
+    Days 3-4: Interfaces, type aliases, and functions
+    Days 5-7: Classes, generics, and modules
+    Weekend Project: Convert a small JavaScript project to TypeScript
+    ---
+    Week 2: Advanced TypeScript
+    Days 1-2: TypeScript configurations and tsconfig.json
+    Days 3-4: Type assertions, utility types, and decorators
+    Days 5-7: TypeScript best practices and integration with build tools
+    Weekend Project: Build a simple API client with TypeScriptcould you
+    ---
+    please make 10 typical example for me to learn typescriptthe 10 examples should be useful in real project
+  tags: TypeScript

@@ -1,0 +1,95 @@
+config:
+  folder: ./data
+  title: "sticky note v1.0 - walter"
+  save_interval_ms: 5000
+  default_tomato_min: 25
+  deadline: "2025-06-07"
+  short_break_min: 5
+  default_command: "list files"
+  frame_size: "560x360"
+  links:
+    - name: "deepseek"
+      url: "https://chat.deepseek.com"
+  commands:
+    - name: "disk space"
+      shell: df -h
+      new_window: true
+    - name: "list files"
+      shell: ls -l -a .
+      new_window: true
+  tasks: |
+    title, priority, difficulty, duration, deadline
+    write design, 1, 1, 60, {{ today }}
+    write code, 1, 2, 120, {{ today }}
+    self testing, 2, 2, 120, {{ tomorrow }}
+    review meeting, 2, 2, 60, {{ today }}
+    write my blog, 3, 2, 60, {{ today }}
+    learn english, 2, 2, 30, {{ today }}
+    physical exercise, 2, 2, 60, {{ today }}
+    check email and IM, 1, 2, 30, {{ today }}
+    learn domain knowledge, 2, 2, 120, {{ tomorrow }}
+
+llm:
+  base_url: https://api.deepseek.com
+  model: deepseek-chat
+  stream: false
+  max_token: 4096
+  temperature: 1.0
+templates:
+  diary: |
+    ## Inbox
+    > record anything in your mind
+
+    ## Tasks
+    * [ ] top 1
+    * [ ] top 2
+    * [ ] top 3
+
+    ## PDCA
+    > plan, do, record result and issues, then check and adjust/act
+
+    {{ content }}
+
+    ## Summary and notes
+    > what I have done and learned today?
+
+  blog: |
+    ## Daily comment on 1 social hot news
+    ...
+    ## Daily recommendation of 1 GitHub hot project
+    ...
+    ## Daily recommendation of 1 best practice in software development and AI applications
+    ...
+    ## Daily practice of 1 leetCode algorithm question with a detailed explanation
+    ...
+    ## Daily practice of 1 classic design pattern with a detailed explanation
+    ...
+    ## Daily recitation of 10 English quotes
+    ...
+
+  meeting_note: |
+    ## 会议记录 - {{ title }}
+    **日期：{{ date }}
+    **时间：{{ time }}
+    **地点：{{ location }}
+    **与会者：{{ attendees }
+
+    ## 议程
+    1. topic 1
+    2. topic 2
+    3. topic 3
+
+    ### 讨论内容
+    - issue 1
+    - issue 2
+    - issue 3
+
+    ### 结论
+    - conclusion 1
+    - conclusion 2
+    - conclusion 3
+
+    ### 待办事项
+    - [ ] item 1
+    - [ ] item 2
+    - [ ] item 3
